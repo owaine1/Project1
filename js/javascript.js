@@ -2,39 +2,53 @@ console.log('Hello are you here?');
 
 // vars go here!
 
-$(document).ready();
+$(document).ready(setup);
 
+// checked so far working to here*
 function setup(){
-  console.log('Inside setup');
+  console.log('Setup loaded');
+
+  $('#seconds_counter').click(loading);
+  $('#card1').attr("src", "images/blackHex.svg");
+  $('#card10').attr("src", "images/blackCircle.svg");
+
+  console.log($('#backOfCard'));
+
 }
-document.getElementById("backOfCard").src="images/blackHex.svg";
-document.getElementById('#box1').textContent = 'Check!';
-$("#box1").html( "<img src='images/blueBox.svg'>" );
-function randomDisplayCards(){
+//  to here*
+
+//document.getElementById('#box1').textContent = 'Check!';
+function randomDisplayCards() {
   console.log('Inside randomDisplayCards');
   // some way that js will select random images for the grid
-
-  // maybe, of the 16, 12 are different,
+    // put 3 random imgs in class col 1 + 1 constant
+    // put 3 random imgs in class col 2 + 1 constant
+    // put 3 random imgs in class col 3 + 1 constant
+    // put 3 random imgs in class col 4 + 1 constant
+//  something like https://stackoverflow.com/questions/21648147/selecting-a-random-image
+  // likely, of the 16, 12 are different,
   // 4 are the same tiles, not of 16
   // the 4 appear 1 time in every column
   // var num = Math.floor(Math.random() * ?);
-  // per column 1 contant, 3 randoms; same for the other 4 columns
-  //
+  // per column 1 constant, 3 randoms; same for the other 4 columns
 
 }
-// *****
 
-$('#seconds-counter').click(console.log('Button pressed')());
-/*
-setTimeout(incrementSeconds, 5000
-function incrementSeconds() {
-  var seconds;
 
-    console.log('Only ' + seconds + ' seconds to go.');
+function loading(){
+  console.log('clicked');
 }
 
-var cancel = setInterval(incrementSeconds, 1000);
-*/
+
+// setTimeout(incrementSeconds, 5000
+// function incrementSeconds() {
+  // var seconds;
+
+    // console.log('Only ' + seconds + ' seconds to go.');
+// }
+
+// var cancel = setInterval(incrementSeconds, 1000);
+
 // *****
 
 
