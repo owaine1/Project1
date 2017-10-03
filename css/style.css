@@ -1,0 +1,13 @@
+#row1, #row2, #row3, #row4 {
+  display:flex;
+  background-color: #ffc;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 71%;
+  height: 50%;
+}
+img{
+  width:auto;
+  height: auto;
+}
