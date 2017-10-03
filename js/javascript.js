@@ -9,14 +9,21 @@ function setup(){
 }
 function randomDisplayCards(){
   console.log('Inside randomDisplayCards');
+  // some way that js will select random images for the grid
+  // maybe, of the 16, 12 are different,
+  // 4 are the same tiles, not of 16
+  // 4 appear 1 in every column
+  // var num = Math.floor(Math.random() * ?);
+
+  //
 }
-/* This function might change, unsure of exact game yet
-function randomPairsStart(){
-  console.log('Inside randomPairsStart');
-}
-*/
+
 function playerTurnTimer(){
   console.log('Inside playerTurnTimer');
+
+// has a countdown timer displaying 5 to 1 secs in 5:00 format at the top
+// if no user input within 5 secs, say "You're too slow!"
+// goes to next player
 }
 
 function totalPlayerTimeTaken(){
@@ -35,22 +42,26 @@ function scoreCounter(){
   console.log('Inside scoreCounter');
 }
 
-// Canvas element of counter flashing and twisting and being added to player score.
+// CANVAS ELEMENT of counter flashing and twisting and being added to player score.
 // Related to rightCardsPicked function.
 // Still need counter in main javaScript, not displayed but in memory
 
 
 function switchPlayers(){
   console.log('Inside switchPlayers');
+  // after players turn, go to noext player
 }
 
-
-
-function concedeGame(){
-  console.log('Inside concedeGame');
+function concedeGameButton(){
+  console.log('Inside concedeGameButton');
+  // makes no score, goes to next player
 }
+
 function finalScoreCounter(){
   console.log('Inside finalScoreCounter');
+  // adds / holds final scores of each player and caluculates totalPlayerTimeTaken
+  // calculate players counters and factor in amount of time totalPlayerTimeTaken
+  // very simmial / related / combined / callback? to endOfGame
 }
 
 function endOfGame(){
