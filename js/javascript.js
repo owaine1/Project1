@@ -7,26 +7,34 @@ $(document).ready();
 function setup(){
   console.log('Inside setup');
 }
+document.getElementById("backOfCard").src="images/blackHex.svg";
+document.getElementById('#box1').textContent = 'Check!';
+$("#box1").html( "<img src='images/blueBox.svg'>" );
 function randomDisplayCards(){
   console.log('Inside randomDisplayCards');
   // some way that js will select random images for the grid
+
   // maybe, of the 16, 12 are different,
   // 4 are the same tiles, not of 16
   // the 4 appear 1 time in every column
   // var num = Math.floor(Math.random() * ?);
-
+  // per column 1 contant, 3 randoms; same for the other 4 columns
   //
+
 }
 // *****
-$("button#seconds-counter").on("click", incrementSeconds())
 
-var seconds = 5;
-var el = document.getElementById('seconds-counter');
+$('#seconds-counter').click(console.log('Button pressed')());
+/*
+setTimeout(incrementSeconds, 5000
 function incrementSeconds() {
-    console.log('"Only " + seconds + " seconds to go."');
+  var seconds;
+
+    console.log('Only ' + seconds + ' seconds to go.');
 }
 
 var cancel = setInterval(incrementSeconds, 1000);
+*/
 // *****
 
 

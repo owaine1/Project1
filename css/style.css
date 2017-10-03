@@ -7,6 +7,11 @@
   width: 71%;
   height: 50%;
 }
+h2 {
+
+  clear: both;
+  display: block;
+}
 img{
   width:auto;
   height: auto;
