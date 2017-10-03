@@ -12,19 +12,28 @@ function randomDisplayCards(){
   // some way that js will select random images for the grid
   // maybe, of the 16, 12 are different,
   // 4 are the same tiles, not of 16
-  // 4 appear 1 in every column
+  // the 4 appear 1 time in every column
   // var num = Math.floor(Math.random() * ?);
 
   //
 }
+// *****
+$("button#seconds-counter").on("click", incrementSeconds())
 
-function playerTurnTimer(){
-  console.log('Inside playerTurnTimer');
+var seconds = 5;
+var el = document.getElementById('seconds-counter');
+function incrementSeconds() {
+    console.log('"Only " + seconds + " seconds to go."');
+}
+
+var cancel = setInterval(incrementSeconds, 1000);
+// *****
+
 
 // has a countdown timer displaying 5 to 1 secs in 5:00 format at the top
 // if no user input within 5 secs, say "You're too slow!"
 // goes to next player
-}
+
 
 function totalPlayerTimeTaken(){
   console.log('Inside totalPlayerTimeTaken');
@@ -49,7 +58,7 @@ function scoreCounter(){
 
 function switchPlayers(){
   console.log('Inside switchPlayers');
-  // after players turn, go to noext player
+  // after players turn, go to next player
 }
 
 function concedeGameButton(){
