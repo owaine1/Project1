@@ -3,43 +3,44 @@ console.log('Hello here?');
 // vars go here!
 // see https://stackoverflow.com/questions/21648147/selecting-a-random-image
 // for suggestion of how to complete...
-image[0] = 'backOfCard.svg';
-image[1] = 'blackBox.svg';
-image[2] = 'blackCircle.svg';
-image[3] = 'blackCross.svg';
-image[4] = 'blackHex.svg';
-image[5] = 'blackTri.svg';
-image[6] = 'blueBox.svg';
-image[7] = 'blueCircle.svg';
-image[8] = 'blueCross.svg';
-image[9] = 'blueHex.svg';
-image[10] = 'blueTri.svg';
-image[11] = 'greenBox.svg';
-image[12] = 'greenCircle.svg';
-image[13] = 'greenCross.svg';
-image[14] = 'greenHex.svg';
-image[15] = 'greenTri.svg';
-image[16] = 'orangeBox.svg';
-image[17] = 'orangeCircle.svg';
-image[18] = 'orangeCross.svg';
-image[19] = 'orangeHex.svg';
-image[20] = 'orangeTri.svg';
-image[21] = 'purpleBox.svg';
-image[22] = 'purpleCircle.svg';
-image[23] = 'purpleCross.svg';
-image[24] = 'purpleHex.svg';
-image[25] = 'purpleTri.svg';
-image[26] = 'redBox.svg';
-image[27] = 'redBoxCircle.svg';
-image[28] = 'redCross.svg';
-image[29] = 'redHex.svg';
-image[30] = 'redTri.svg';
-image[31] = 'yellowBox.svg';
-image[32] = 'yellowCircle.svg';
-image[33] = 'yellowCross.svg';
-image[34] = 'yellowHex.svg';
-image[35] = 'yellowTri.svg';
-
+/*
+imageArray[0] = 'backOfCard.svg';
+imageArray[1] = 'blackBox.svg';
+imageArray[2] = 'blackCircle.svg';
+imageArray[3] = 'blackCross.svg';
+imageArray[4] = 'blackHex.svg';
+imageArray[5] = 'blackTri.svg';
+imageArray[6] = 'blueBox.svg';
+imageArray[7] = 'blueCircle.svg';
+imageArray[8] = 'blueCross.svg';
+imageArray[9] = 'blueHex.svg';
+imageArray[10] = 'blueTri.svg';
+imageArray[11] = 'greenBox.svg';
+imageArray[12] = 'greenCircle.svg';
+imageArray[13] = 'greenCross.svg';
+imageArray[14] = 'greenHex.svg';
+imageArray[15] = 'greenTri.svg';
+imageArray[16] = 'orangeBox.svg';
+imageArray[17] = 'orangeCircle.svg';
+imageArray[18] = 'orangeCross.svg';
+imageArray[19] = 'orangeHex.svg';
+imageArray[20] = 'orangeTri.svg';
+imageArray[21] = 'purpleBox.svg';
+imageArray[22] = 'purpleCircle.svg';
+imageArray[23] = 'purpleCross.svg';
+imageArray[24] = 'purpleHex.svg';
+imageArray[25] = 'purpleTri.svg';
+imageArray[26] = 'redBox.svg';
+imageArray[27] = 'redBoxCircle.svg';
+imageArray[28] = 'redCross.svg';
+imageArray[29] = 'redHex.svg';
+imageArray[30] = 'redTri.svg';
+imageArray[31] = 'yellowBox.svg';
+imageArray[32] = 'yellowCircle.svg';
+imageArray[33] = 'yellowCross.svg';
+imageArray[34] = 'yellowHex.svg';
+imageArray[35] = 'yellowTri.svg';
+*/
 $(document).ready(setup);
 
 // checked so far working to here*
@@ -47,9 +48,11 @@ function setup(){
   console.log('Setup loaded');
 
   $('#seconds_counter').click(loading);
-  $('#card1').attr("src", "images/blackHex.svg");
-  $('#card10').attr("src", "images/blackCircle.svg");
+  $('[id^="card"]').attr("src", "images/backOfCard.svg");
+  // $('#card1').attr("src", "images/blackHex.svg");
+  // $('#card10').attr("src", "images/blackCircle.svg");
 
+  // backOfCard.svg needs to be default setup tile
   console.log($('#backOfCard'));
 
 }
@@ -60,12 +63,13 @@ function randomDisplayCards() {
   console.log('Inside randomDisplayCards');
   // some way that js will select random images for the grid
     // put 3 random imgs in class col 1 + 1 constant
+
     // put 3 random imgs in class col 2 + 1 constant
     // put 3 random imgs in class col 3 + 1 constant
     // put 3 random imgs in class col 4 + 1 constant
+      // this is a for loop
 //  something like https://stackoverflow.com/questions/21648147/selecting-a-random-image
-  // likely, of the 16, 12 are different,
-  // 4 are the same tiles, not of 16
+  //  of 16 tiles, 12 are different, 4 are the same
   // the 4 appear 1 time in every column
   // var num = Math.floor(Math.random() * ?);
   // per column 1 constant, 3 randoms; same for the other 4 columns
