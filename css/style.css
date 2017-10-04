@@ -1,21 +1,23 @@
-
 body {
   background: #ccc;
 }
+
 *#row1, *#row2, *#row3, *#row4 {
-  display:flex;
+  display: flex;
   background-color: #ffc;
   position: relative;
   top: 50px;
   left: 50px;
-
-}
-h2 {
-
   clear: both;
-  display: block;
 }
-img{
-  width:auto;
+
+#container2 {
+  float: inherit;
+  position: static;
+  display: inline;
+}
+
+img {
+  width: auto;
   height: auto;
 }
