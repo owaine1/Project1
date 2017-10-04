@@ -1,6 +1,44 @@
-console.log('Hello are you here?');
+console.log('Hello here?');
 
 // vars go here!
+// see https://stackoverflow.com/questions/21648147/selecting-a-random-image
+// for suggestion of how to complete...
+image[0] = 'backOfCard.svg';
+image[1] = 'blackBox.svg';
+image[2] = 'blackCircle.svg';
+image[3] = 'blackCross.svg';
+image[4] = 'blackHex.svg';
+image[5] = 'blackTri.svg';
+image[6] = 'blueBox.svg';
+image[7] = 'blueCircle.svg';
+image[8] = 'blueCross.svg';
+image[9] = 'blueHex.svg';
+image[10] = 'blueTri.svg';
+image[11] = 'greenBox.svg';
+image[12] = 'greenCircle.svg';
+image[13] = 'greenCross.svg';
+image[14] = 'greenHex.svg';
+image[15] = 'greenTri.svg';
+image[16] = 'orangeBox.svg';
+image[17] = 'orangeCircle.svg';
+image[18] = 'orangeCross.svg';
+image[19] = 'orangeHex.svg';
+image[20] = 'orangeTri.svg';
+image[21] = 'purpleBox.svg';
+image[22] = 'purpleCircle.svg';
+image[23] = 'purpleCross.svg';
+image[24] = 'purpleHex.svg';
+image[25] = 'purpleTri.svg';
+image[26] = 'redBox.svg';
+image[27] = 'redBoxCircle.svg';
+image[28] = 'redCross.svg';
+image[29] = 'redHex.svg';
+image[30] = 'redTri.svg';
+image[31] = 'yellowBox.svg';
+image[32] = 'yellowCircle.svg';
+image[33] = 'yellowCross.svg';
+image[34] = 'yellowHex.svg';
+image[35] = 'yellowTri.svg';
 
 $(document).ready(setup);
 
