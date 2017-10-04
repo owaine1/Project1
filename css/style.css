@@ -1,20 +1,21 @@
 body {
   background: #ccc;
 }
-
+#container1 {
+  float:left;
+}
 *#row1, *#row2, *#row3, *#row4 {
+
   display: flex;
   background-color: #ffc;
   position: relative;
   top: 50px;
   left: 50px;
-  clear: both;
 }
 
 #container2 {
-  float: inherit;
-  position: static;
-  display: inline;
+  clear:both;
+  float: left;
 }
 
 img {

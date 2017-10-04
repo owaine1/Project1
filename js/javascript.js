@@ -1,8 +1,11 @@
 console.log('Hello here?');
-
+// GLOBALS are BAD / LIVE with it!
+var timeStart;
+var lastCard;
+var startingImagesArray = [];
 // vars go here!
 // see https://stackoverflow.com/questions/21648147/selecting-a-random-image
-// for suggestion of how to complete...
+// for suggestion of how to complete... WORKING THROUGH—NO JOY!
 
 // N.B. 'backOfCard.svg' missing because default hidden card
 imageArray = new Array();
@@ -45,22 +48,98 @@ imageArray[34] = 'images/yellowTri.svg';
 $(document).ready(setup);
 
 // checked so far working to here*
-function setup(){
+function setup() {
   console.log('Setup loaded');
   // backOfCard.svg needs to be default setup tile
-  $('[id^="card"]').attr("src", "images/backOfCard.svg");
-  // $('#card1').attr("src", "images/blackHex.svg");
+  $('img[id^="card"]').attr("src", "images/backOfCard.svg");
+  $('img[id^="card"]').click(turnCard);
 
-  console.log($('#backOfCard'));
-  return(randomDisplayCards);
-  $('#seconds_counter').click(loading);
-
+  var hiddenImages = buildImagesArray();
+  placeImages(hiddenImages);
+  timeStart = new Date();
 }
 //  to here*
+function turnCard() {
+  console.log('Inside turnCard');
+  cardFlip(this);
+  recordTime();
+  testArray();
+}
 
+function placeImages(hiddenImages) {
+  console.log('Inside placeImages');
+  var tempImageArray = [];
+  while (hiddenImages.length) {
+    var imageNo = Math.floor(Math.random() * hiddenImages.length);
+    var imageUrl = hiddenImages.splice(imageNo, 1);
+    tempImageArray.push(imageUrl);
+  }
+  console.log(tempImageArray);
+}
+
+function testArray() {
+  console.log('Inside testArray');
+  var imgNo = Math.floor(Math.random() * 35);
+  console.log(imageArray[imgNo]);
+
+
+}
+
+function buildImagesArray() {
+  console.log('Inside buildImagesArray');
+  for (var counter = 0; startingImagesArray.length < 16; counter++) {
+    var imgNo = Math.floor(Math.random() * 35);
+    var imageUrl = imageArray[imgNo];
+    if ($.inArray(imageUrl, startingImagesArray) == -1) {
+      startingImagesArray.push(imageUrl);
+      startingImagesArray.push(imageUrl);
+    }
+  }
+  return startingImagesArray;
+}
+// once clicked, then do ...
+// card flips around
+function cardFlip(cardimage) {
+  console.log('Inside cardFlip');
+  console.log(cardimage);
+  $(cardimage)
+    .fadeOut(250, function() {
+      var imgNo = Math.floor(Math.random() * 35);
+      $(cardimage).attr('src', imageArray[imgNo])
+    })
+    .fadeIn(250);
+
+}
+
+function recordTime() {
+  console.log('Inside recordTime');
+  var timeEnd = new Date();
+  var timeTaken = (timeEnd - timeStart) / 1000;
+  $('#timeTaken').text(timeTaken);
+}
+// on click card turns
+// compare if 2nd clicked same as 1st
+//
+// if same give player point on score counter
+
+// if different, no score go to next player
+
+
+
+
+
+
+
+
+
+/*
+// this might be as game is in progress;
+ // rather than as initial setup?
 function randomDisplayCards() {
   console.log('Inside randomDisplayCards');
-  $('#card1').attr("src", "images/blackHex.svg");
+
+  getRandomImage(imageArray, "");
+  $('#card1').attr("src", imageArray);
   // some way that js will select random images for the grid
   // TEST display 16 randomDisplayCards
   // getRandomImage(imageArray, "");
@@ -71,11 +150,11 @@ function randomDisplayCards() {
   // console.log(randImage);
 
   // this is a for loop?
-    // put 3 random imgs in class col 1 + 1 constant
-    // put 3 random imgs in class col 2 + 1 constant
-    // put 3 random imgs in class col 3 + 1 constant
-    // put 3 random imgs in class col 4 + 1 constant
-//  something like https://stackoverflow.com/questions/21648147/selecting-a-random-image
+  // put 3 random imgs in class col 1 + 1 constant
+  // put 3 random imgs in class col 2 + 1 constant
+  // put 3 random imgs in class col 3 + 1 constant
+  // put 3 random imgs in class col 4 + 1 constant
+  //  something like https://stackoverflow.com/questions/21648147/selecting-a-random-image
   //  of 16 tiles, 12 are different, 4 are the same
   // the 4 appear 1 time in every column
   // var num = Math.floor(Math.random() * ?);
@@ -83,16 +162,16 @@ function randomDisplayCards() {
 }
 
 
-function loading(){
+function loading() {
   console.log('clicked');
 }
 
 
 // setTimeout(incrementSeconds, 5000
 // function incrementSeconds() {
-  // var seconds;
+// var seconds;
 
-    // console.log('Only ' + seconds + ' seconds to go.');
+// console.log('Only ' + seconds + ' seconds to go.');
 // }
 
 // var cancel = setInterval(incrementSeconds, 1000);
@@ -105,11 +184,11 @@ function loading(){
 // goes to next player
 
 
-function totalPlayerTimeTaken(){
+function totalPlayerTimeTaken() {
   console.log('Inside totalPlayerTimeTaken');
 }
 
-function rightCardsPicked(){
+function rightCardsPicked() {
   console.log('Inside rightCardsPicked');
   // if / else statement cards picked display: "right cards = Well done!", Do something
   // add point to players score
@@ -117,7 +196,7 @@ function rightCardsPicked(){
   //better put: win or lose
 }
 
-function scoreCounter(){
+function scoreCounter() {
   console.log('Inside scoreCounter');
 }
 
@@ -126,29 +205,30 @@ function scoreCounter(){
 // Still need counter in main javaScript, not displayed but in memory
 
 
-function switchPlayers(){
+function switchPlayers() {
   console.log('Inside switchPlayers');
   // after players turn, go to next player
 }
 
-function concedeGameButton(){
+function concedeGameButton() {
   console.log('Inside concedeGameButton');
   // makes no score, goes to next player
 }
 
-function finalScoreCounter(){
+function finalScoreCounter() {
   console.log('Inside finalScoreCounter');
   // adds / holds final scores of each player and calculates totalPlayerTimeTaken
   // calculate players counters and factor in amount of time totalPlayerTimeTaken
   // very simmial / related / combined / callback? to endOfGame
 }
 
-function endOfGame(){
+function endOfGame() {
   console.log('Inside endOfGame');
   // counter of amount 1st player to score 3
   // add a "click to play again" flash-up in jQuery. jQuery is clicked, go to setup
 }
 
-function resetButton(){
+function resetButton() {
   console.log('Inside resetButton');
 }
+*/
