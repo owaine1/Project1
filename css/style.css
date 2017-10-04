@@ -22,3 +22,7 @@ img {
   width: auto;
   height: auto;
 }
+.imageHide{
+  display:none;
+  
+}

@@ -51,11 +51,10 @@ $(document).ready(setup);
 function setup() {
   console.log('Setup loaded');
   // backOfCard.svg needs to be default setup tile
-  $('img[id^="card"]').attr("src", "images/backOfCard.svg");
-  $('img[id^="card"]').click(turnCard);
-
   var hiddenImages = buildImagesArray();
   placeImages(hiddenImages);
+  $('img[id^="card"]').attr("src", "images/backOfCard.svg");
+  $('img[id^="card"]').click(turnCard);
   timeStart = new Date();
 }
 //  to here*
@@ -74,15 +73,19 @@ function placeImages(hiddenImages) {
     var imageUrl = hiddenImages.splice(imageNo, 1);
     tempImageArray.push(imageUrl);
   }
-  console.log(tempImageArray);
+  var blankTiles = $('div[id^=box]');
+  blankTiles.each(function(index) {
+    var newImage = tempImageArray[index];
+    var $imgTag = $('<img>');
+    $imgTag.attr('src', newImage);
+    $imgTag.attr('class', 'imageHide');
+    $(this).append($imgTag);
+  })
 }
 
 function testArray() {
   console.log('Inside testArray');
   var imgNo = Math.floor(Math.random() * 35);
-  console.log(imageArray[imgNo]);
-
-
 }
 
 function buildImagesArray() {
@@ -101,14 +104,23 @@ function buildImagesArray() {
 // card flips around
 function cardFlip(cardimage) {
   console.log('Inside cardFlip');
-  console.log(cardimage);
-  $(cardimage)
-    .fadeOut(250, function() {
-      var imgNo = Math.floor(Math.random() * 35);
-      $(cardimage).attr('src', imageArray[imgNo])
-    })
-    .fadeIn(250);
-
+  // $(cardimage)
+  //   .fadeOut(250, function() {
+  //     $(cardimage).siblings('.imageHide').show();
+  //   })
+  //   .fadeIn(250);
+  $(cardimage).hide();
+  $(cardimage).siblings('.imageHide').show();
+  var lastUrl = $(cardimage).siblings('.imageHide').attr('src');
+  if (lastUrl == lastCard) {
+    console.log('the same!');
+  } else {
+    lastCard = lastUrl;
+    setTimeout(function(){
+      $(cardimage).show();
+      $(cardimage).siblings('.imageHide').hide();
+    },500)
+  }
 }
 
 function recordTime() {
