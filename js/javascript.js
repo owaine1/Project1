@@ -6,11 +6,13 @@ var lastId; // Id of cards to compare
 var cardCounter = 0; // stops timer when it hits 8 (matching pairs)
 var cardTimeDelay = 500; // time image is shown for
 var imageFadeTime = 1000; // time taken for 2 matching images to disappear
+var player1, player2, currentPlayer;
 
 $(document).ready(setup);
 
 function setup() {
   console.log('Setup loaded');
+  $('#container1').hide();
   placeImages(); // does all the image setup stuff in imageData.js
   attachClickListeners();
   timeStart = new Date();
@@ -20,9 +22,19 @@ function attachClickListeners() {
   // all click listeners in here
   $('img[id^="card"]').click(cardFlip);
   $('#reset').click(reset); //DONE
+  $('#startButton').click(gameStart);
 
   // $('#newGame').click(???); //is this the smae as reset,
   // or are there some elements the same, some different.
+}
+
+function gameStart() {
+  console.log('Inside gameStart');
+  player1 = $('#player1');//.val()
+  player2 = $('#player2');
+  console.log(player1, player2);
+  $('#container1').show();
+  switchPlayers();
 }
 
 // hides the image clicked and shows the sibling image
@@ -64,7 +76,7 @@ function matchingCards(lastUrl) {
   $('img[src="' + lastUrl + '"]').show(); // shows the two matching cards
   // $('img[src="' + lastUrl + '"]').fadeOut(imageFadeTime);
   $('img[src="' + lastUrl + '"]').attr("src", "images/check.svg");
-  if (cardCounter == 8) {
+  if (cardCounter == 1) {//TODO reset to 8 before deploy
     gameOver();
   }
   displayTimer();
@@ -76,9 +88,27 @@ function matchingCards(lastUrl) {
 // players' least time wins.
 function switchPlayers() {
   console.log('Inside switchPlayers');
+  console.log(player1, player2, currentPlayer);
+
+  if (player1 == currentPlayer) {
+    console.log('player1' + player1 + ', ' + recordTime());
+    currentPlayer = player2;
+    $('#playerTurn').text(player1 + "'s turn")
+
+  } else if (player2 == currentPlayer) {
+    console.log('player2' + player2 + ', ' + recordTime());
+    currentPlayer = player1;
+    $('#playerTurn').text(player1 + "'s turn")
+
+  } else {
+    currentPlayer = player1;//initial player1
+    $('#playerTurn').text(player1 + "'s turn")
+  }
+
   // TODO after players turn, go to next player
   // screen flashup "Awesome, next players' turn": once all cards matched.
-  // start new board?
+  // start new board? (a bit like reset / setup, but different,
+  //  just call placeImages function???)
   // retain time: new (BAD) global variable for player1 time
   // and another for player2 time?
   // but keep time of both. note 1st time player not to be awarded anything unless
@@ -87,8 +117,7 @@ function switchPlayers() {
 
 function gameOver() {
   console.log('Inside gameOver');
-  recordTime();
-  // do other gameover stuff e.g. swap players?
+  switchPlayers();
 }
 
 function recordTime() {
@@ -96,10 +125,11 @@ function recordTime() {
   var timeEnd = new Date();
   var timeTaken = (timeEnd - timeStart) / 1000;
   $('#timeTaken').text('game over, time taken: ' + timeTaken);
+  return timeTaken;
 }
 
 function displayTimer() {
-  console.log();//TODO not recordTime function, use timeStart to display somewhere?
+  console.log(); //TODO not recordTime function, use timeStart to display somewhere?
 }
 
 function totalPlayerTimeTaken() {
@@ -121,7 +151,7 @@ function concedeGameButton() {
 
 function finalScoreCounter() {
   console.log('Inside finalScoreCounter');
-// holds players' wins
+  // holds players' wins
 }
 
 function endOfGame() {
