@@ -10,10 +10,6 @@ body {
 *#row1, *#row2, *#row3, *#row4 {
   display: flex;
   flex-direction: row;
-  /*background-color: #ffc;
-  position: relative;
-  top: 50px;
-  left: 50px;*/
 }
 img {
   width: auto;
@@ -26,7 +22,7 @@ img {
   border: 2px solid red;
 }
 
-/*to help with design - delete before deploy!*/
+// to help with design - delete before deploy!
 #container1, #container2{
     border: 0.2em solid darkgray;
 }

@@ -1,7 +1,10 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-	<path d="M5,5h90,v90h-90z" fill="#aaa"/>
-	<path d="M20,0v100m20,0v-100m20,0v100m20,0v-100M0,20h100m0,20h-100m0,20h100m0,20h-100" stroke-width="8" stroke="#fff"/>
-	<path d="M20,5v90m20,0v-90m20,0v90m20,0
-		v-90M5,20h90m0,20h-90m0,20h90m0,20h-90"
-		stroke-width="1" stroke="#555"/>
-</svg>
+	<path d="M5,5h90,v90h-90z" fill="#f00"/>
+	<g stroke-width="4" stroke="#fff">
+		<g id="diamonds">
+			<path d="M0,40l26-39h20l-44,66v30l64-96h20l-66,99h20l58-87v30l-38,57h20l18-27m-75,24l-20-30v-30l40,60h20l-64-96h20l64,96m-64-96h20l60,90v-30l-40-60h20l20,30" fill="none"/>
+		</g>
+	</g>
+	<use href="#diamonds" stroke-width=".5" stroke="#000"/>
+	<path d="M2.5,2.5h95v95h-95v-95" stroke-width="5" stroke="#fff" fill="none"/>
+	</svg>

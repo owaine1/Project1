@@ -7,47 +7,53 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="js/javascript.js" charset="utf-8"></script>
-  <title>Document</title>
+  <script src="js/setup.js"></script>
+  <script src="js/reset.js"></script>
+
+  <script src="js/javascript.js"></script>
+  <title>Tile Game</title>
 </head>
 
 <body>
   <h1>Timed Matching Cards type Game</h1>
   <h2>Instructions</h2>
-  <div id="timeTaken"></div>
-  <div id="container1">
-    <div id="row1">
-      <div id="box0" class="row1 col1"><img id="card0"></div>
-      <div id="box1" class="row1 col2"><img id="card1"></div>
-      <div id="box2" class="row1 col3"><img id="card2"></div>
-      <div id="box3" class="row1 col4"><img id="card3"></div>
+  <p>Click on a tile. You have half a second to memorise where it is.</p>
+  <p>Now match it. Matching tiles disappear. When all tiles are gone you will get a winning time.</p>
+  <p>Fastest time is the champ!</p>
+  <div id="outer_container">
+    <div id="container1">
+      <div id="row1">
+        <div id="box0"><img id="card0" src="images/backOfCard.svg"></div>
+        <div id="box1"><img id="card1" src="images/backOfCard.svg"></div>
+        <div id="box2"><img id="card2" src="images/backOfCard.svg"></div>
+        <div id="box3"><img id="card3" src="images/backOfCard.svg"></div>
+      </div>
+      <div id="row2">
+        <div id="box4"><img id="card4" src="images/backOfCard.svg"></div>
+        <div id="box5"><img id="card5" src="images/backOfCard.svg"></div>
+        <div id="box6"><img id="card6" src="images/backOfCard.svg"></div>
+        <div id="box7"><img id="card7" src="images/backOfCard.svg"></div>
+      </div>
+      <div id="row3">
+        <div id="box8"><img id="card8" src="images/backOfCard.svg"></div>
+        <div id="box9"><img id="card9" src="images/backOfCard.svg"></div>
+        <div id="box10"><img id="card10" src="images/backOfCard.svg"></div>
+        <div id="box11"><img id="card11" src="images/backOfCard.svg"></div>
+      </div>
+      <div id="row4">
+        <div id="box12"><img id="card12" src="images/backOfCard.svg"></div>
+        <div id="box13"><img id="card13" src="images/backOfCard.svg"></div>
+        <div id="box14"><img id="card14" src="images/backOfCard.svg"></div>
+        <div id="box15"><img id="card15" src="images/backOfCard.svg"></div>
+      </div>
     </div>
-    <div id="row2">
-      <div id="box4" class="row2 col1"><img id="card4"></div>
-      <div id="box5" class="row2 col2"><img id="card5"></div>
-      <div id="box6" class="row2 col3"><img id="card6"></div>
-      <div id="box7" class="row2 col4"><img id="card7"></div>
-    </div>
-    <div id="row3">
-      <div id="box8" class="row3 col1"><img id="card8"></div>
-      <div id="box9" class="row3 col2"><img id="card9"></div>
-      <div id="box10" class="row3 col3"><img id="card10"></div>
-      <div id="box11" class="row3 col4"><img id="card11"></div>
-    </div>
-    <div id="row4">
-      <div id="box12" class="row4 col1"><img id="card12"></div>
-      <div id="box13" class="row4 col2"><img id="card13"></div>
-      <div id="box14" class="row4 col3"><img id="card14"></div>
-      <div id="box15" class="row4 col4"><img id="card15"></div>
-    </div>
-  </div>
-  <div id="container2">
+    <div id="container2">
       <h2>Player 1 Score</h2>
       <h2>Player 2 Score</h2>
-    <button id="reset">Reset</button>
-    <button id="concedeGame">Concede Game</button>
-    <button id="newGame">New Game</button>
-    <button id="seconds_counter">Player Timer Test</button>
+      <div id="timeTaken"></div>
+      <button id="reset">Reset</button>
+      <button id="newGame">New Game</button>
+    </div>
   </div>
 </body>
 
