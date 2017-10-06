@@ -21,7 +21,8 @@ function attachClickListeners() {
   $('img[id^="card"]').click(cardFlip);
   $('#reset').click(reset); //DONE
 
-  // $('#newGame').click(???);
+  // $('#newGame').click(???); //is this the smae as reset,
+  // or are there some elements the same, some different.
 }
 
 // hides the image clicked and shows the sibling image
@@ -39,7 +40,6 @@ function cardFlip() {
   var currentUrl = $(imageClicked).siblings('.imageHide').attr('src');
   var currentId = $(imageClicked).attr('id');
   console.log('currentId: ' + currentId);
-
 
   if (currentUrl == lastCard && currentId != lastId) { //cU =(lC and cI)
     console.log('the same!');
@@ -67,62 +67,65 @@ function matchingCards(lastUrl) {
   if (cardCounter == 8) {
     gameOver();
   }
-
-  // switch player function???
-  // IDEA once 2nd player played, need to calculate shortest time between the 2
-  // shortest time wins, gets token
+  displayTimer();
+}
+// switch player function???
+// IDEA once 2nd player played, need to calculate shortest time between the 2
+// shortest time wins, gets token
 // player 1 time vs player 2 time
 // players' least time wins.
-
-  function gameOver() {
-    console.log('Inside gameOver');
-    recordTime();
-    // do other gameover stuff eg swap players?
-  }
-
-  function switchPlayers() {
-    console.log('Inside switchPlayers');
-    // after players turn, go to next player
-  }
-
-  function recordTime() {
-    console.log('Inside recordTime');
-    var timeEnd = new Date();
-    var timeTaken = (timeEnd - timeStart) / 1000;
-    $('#timeTaken').text('game over, time taken: ' + timeTaken);
-  }
-
-function displayTimer(){
-  console.log('Inside displayTimer');
+function switchPlayers() {
+  console.log('Inside switchPlayers');
+  // TODO after players turn, go to next player
+  // screen flashup "Awesome, next players' turn": once all cards matched.
+  // start new board?
+  // retain time: new (BAD) global variable for player1 time
+  // and another for player2 time?
+  // but keep time of both. note 1st time player not to be awarded anything unless
+  // 2nd player has played.
 }
 
-  function totalPlayerTimeTaken() {
-    console.log('Inside totalPlayerTimeTaken');
-  }
+function gameOver() {
+  console.log('Inside gameOver');
+  recordTime();
+  // do other gameover stuff e.g. swap players?
+}
 
+function recordTime() {
+  console.log('Inside recordTime');
+  var timeEnd = new Date();
+  var timeTaken = (timeEnd - timeStart) / 1000;
+  $('#timeTaken').text('game over, time taken: ' + timeTaken);
+}
 
-  function scoreCounter() {
-    console.log('Inside scoreCounter');
-  }
+function displayTimer() {
+  console.log();//TODO not recordTime function, use timeStart to display somewhere?
+}
 
-  // CANVAS ELEMENT of counter flashing and twisting and being added to player score.
-  // Related to rightCardsPicked function.
-  // Still need counter in main javaScript, not displayed but in memory
+function totalPlayerTimeTaken() {
+  console.log('Inside totalPlayerTimeTaken');
+}
 
-  function concedeGameButton() {
-    console.log('Inside concedeGameButton');
-    // makes no score, goes to next player
-  }
+function scoreCounter() {
+  console.log('Inside scoreCounter');
+}
 
-  function finalScoreCounter() {
-    console.log('Inside finalScoreCounter');
-    // adds / holds final scores of each player and calculates totalPlayerTimeTaken
-    // calculate players counters and factor in amount of time totalPlayerTimeTaken
-    // very simmial / related / combined / callback? to endOfGame
-  }
+// CANVAS ELEMENT of counter flashing and twisting and being added to player score.
+// Related to rightCardsPicked function.
+// Still need counter in main javaScript, not displayed but in memory
 
-  function endOfGame() {
-    console.log('Inside endOfGame');
-    // counter of amount 1st player to score 3
-    // add a "click to play again" flash-up in jQuery. jQuery is clicked, go to setup
-  }
+function concedeGameButton() {
+  console.log('Inside concedeGameButton');
+  // makes no score, goes to next player
+}
+
+function finalScoreCounter() {
+  console.log('Inside finalScoreCounter');
+// holds players' wins
+}
+
+function endOfGame() {
+  console.log('Inside endOfGame');
+  // counter of amount 1st player to score 3
+  // add a "click to play again" flash-up in jQuery. jQuery is clicked, go to setup
+}
