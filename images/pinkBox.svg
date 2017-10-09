@@ -2,6 +2,6 @@
 	 viewBox="0 0 100 100">
   <g stroke-width="4" stroke="#000" stroke-linejoin="round">
     <path d="M0,0h100,v100h-100z" fill="#ffffe5"/>
-    <path d="M20,42.5h22.5v-22.5h15v22.5h22.5v15h-22.5v22.5h-15v-22.5h-22.5z" fill="#f60"/>
+    <path d="M20,20h60v60h-60z" fill="#f09"/>
   </g>
 </svg>
