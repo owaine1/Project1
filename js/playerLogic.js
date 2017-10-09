@@ -18,21 +18,29 @@ function switchPlayers() {
     console.log('player1' + player1 + ', ' + recordTime());
     currentPlayer = player2;
     $('#playerTurn').text(player2 + "'s turn")
-    // player1Time == recordTime
+    (player1Time == recordTime)
     // send to a function scoreCounter
 
   } else if (player2 == currentPlayer) {
     console.log('player2' + player2 + ', ' + recordTime());
     currentPlayer = player1;
     $('#playerTurn').text(player1 + "'s turn")
-    // player2Time == recordTime
+    (player2Time == recordTime)
     // send to a function scoreCounter
 
   } else {
     currentPlayer = player1; //initial player1
     $('#playerTurn').text(player1 + "'s turn")
   }
-
+function winningTime(player1Time, player2Time){
+  if (player1Time < player2Time){
+    console.log(player1 + " is the winner!");
+  } else {
+    console.log(player2 + " is the winner!");
+    player2
+  }
+  console.log('Inside winningTime');
+}
   // TODO after players turn, go to next player half DONE
   // need to popup "next player"
   // on click, have reset / start new board
@@ -88,13 +96,13 @@ function concedeGameButton() {
   // makes no score, goes to next player
 }
 
-function firstToThreeCounter() {
-  console.log('Inside finalScoreCounter');
-  // holds players' wins
-}
-
-function endOfGame() {
-  console.log('Inside endOfGame');
-  // counter of amount 1st player to score 3
-  // add a "click to play again" flash-up in jQuery. jQuery is clicked, go to setup
-}
+// function firstToThreeCounter() {
+//   console.log('Inside finalScoreCounter');
+//   // holds players' wins
+// }
+//
+// function endOfGame() {
+//   console.log('Inside endOfGame');
+//   // counter of amount 1st player to score 3
+//   // add a "click to play again" flash-up in jQuery. jQuery is clicked, go to setup
+// }
