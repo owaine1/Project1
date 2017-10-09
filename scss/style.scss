@@ -1,6 +1,18 @@
 body {
   background: #ccc;
 }
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900px;
+}
+img {
+  width: auto;
+  height: auto;
+}
+
+.imageHide {
+  display: none;
+}
 
 #outer_container {
   display: flex;
@@ -19,14 +31,6 @@ body {
 }
 [id^=box]{
   padding: 0.5em;
-}
-img {
-  width: auto;
-  height: auto;
-}
-
-.imageHide {
-  display: none;
 }
 
 .test {
