@@ -18,14 +18,14 @@ function switchPlayers() {
     console.log('player1' + player1 + ', ' + recordTime());
     currentPlayer = player2;
     $('#playerTurn').text(player2 + "'s turn")
-    (player1Time == recordTime)
+    (player1Time = recordTime)
     // send to a function scoreCounter
 
   } else if (player2 == currentPlayer) {
     console.log('player2' + player2 + ', ' + recordTime());
     currentPlayer = player1;
     $('#playerTurn').text(player1 + "'s turn")
-    (player2Time == recordTime)
+    (player2Time = recordTime)
     // send to a function scoreCounter
 
   } else {
