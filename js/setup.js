@@ -5,8 +5,10 @@
 // <img src="images/redTri.svg" class="imageHide" style="display: inline;">
 function placeImages() {
   console.log('Inside placeImages');
+$('div[id^=card]').show();
   var hiddenImages = build16ImagesArray(); //builds 2 x 8 image array
   var blankTiles = $('div[id^=box]'); // jQuery grabs all divs with id starting 'box...'
+
   blankTiles.each(function(indexno) {
     var newImage = hiddenImages[indexno]; // for each blankTiles indexno get corresponding image in hiddenImages
     var $imgTag = $('<img>'); // jQuery create <img> tag
