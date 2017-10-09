@@ -71,11 +71,11 @@ function imageDatabase() {
   imageArray[12] = 'images/greenCross.svg';
   imageArray[13] = 'images/greenHex.svg';
   imageArray[14] = 'images/greenTri.svg';
-  imageArray[15] = 'images/orangeBox.svg';
-  imageArray[16] = 'images/orangeCircle.svg';
-  imageArray[17] = 'images/orangeCross.svg';
-  imageArray[18] = 'images/orangeHex.svg';
-  imageArray[19] = 'images/orangeTri.svg';
+  imageArray[15] = 'images/pinkBox.svg';
+  imageArray[16] = 'images/pinkCircle.svg';
+  imageArray[17] = 'images/pinkCross.svg';
+  imageArray[18] = 'images/pinkHex.svg';
+  imageArray[19] = 'images/pinkTri.svg';
   imageArray[20] = 'images/purpleBox.svg';
   imageArray[21] = 'images/purpleCircle.svg';
   imageArray[22] = 'images/purpleCross.svg';
