@@ -17,7 +17,7 @@ function switchPlayers() {
   if (player1 == currentPlayer) {
     console.log('player1' + player1 + ', ' + recordTime());
     currentPlayer = player2;
-    $('#playerTurn').text(player1 + "'s turn")
+    $('#playerTurn').text(player2 + "'s turn")
     // player1Time == recordTime
     // send to a function scoreCounter
 
