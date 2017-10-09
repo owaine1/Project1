@@ -8,7 +8,6 @@ function getPlayers() {
     $('#messages').text('');
     return true;
   }
-
 }
 
 function switchPlayers() {
@@ -19,25 +18,37 @@ function switchPlayers() {
     console.log('player1' + player1 + ', ' + recordTime());
     currentPlayer = player2;
     $('#playerTurn').text(player1 + "'s turn")
+    // player1Time == recordTime
+    // send to a function scoreCounter
 
   } else if (player2 == currentPlayer) {
     console.log('player2' + player2 + ', ' + recordTime());
     currentPlayer = player1;
     $('#playerTurn').text(player1 + "'s turn")
+    // player2Time == recordTime
+    // send to a function scoreCounter
 
   } else {
     currentPlayer = player1; //initial player1
     $('#playerTurn').text(player1 + "'s turn")
   }
 
-  // TODO after players turn, go to next player
-  // screen flashup "Awesome, next players' turn": once all cards matched.
+  // TODO after players turn, go to next player half DONE
+  // need to popup "next player"
+  // on click, have reset / start new board
   // start new board? (a bit like reset / setup, but different,
   //  just call placeImages function???)
-  // retain time: new (BAD) global variable for player1 time
-  // and another for player2 time?
-  // but keep time of both. note 1st time player not to be awarded anything unless
-  // 2nd player has played.
+
+  // Need to retain player's time — use recordTime function
+  // go to next player
+  // player2 plays and finishes turn
+  // compare player1 time and player2 time
+  // as if create 2 variables, player1Time recordTime
+  // 2nd time, player2Time = recordTime
+  // compare lowest recordtime through
+  // if player1Time < player2time, give player1 point
+  // else give player2 point
+  //
 }
 
 function gameOver() {
@@ -74,7 +85,7 @@ function concedeGameButton() {
   // makes no score, goes to next player
 }
 
-function finalScoreCounter() {
+function firstToThreeCounter() {
   console.log('Inside finalScoreCounter');
   // holds players' wins
 }

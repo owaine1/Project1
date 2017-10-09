@@ -13,7 +13,6 @@ function placeImages() {
     $imgTag.attr('src', newImage); // set src and class for <img>
     $imgTag.attr('class', 'imageHide');
     $imgTag.addClass('addedImage');
-
     $(this).append($imgTag); // append <img> to the #box div
   })
 }

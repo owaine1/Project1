@@ -23,8 +23,7 @@ function attachClickListeners() {
   $('img[id^="card"]').click(cardFlip);
   $('#reset').click(reset); //DONE
   $('#startButton').click(gameStart);
-
-  // $('#newGame').click(???); //is this the smae as reset,
+  // $('#newGame').click(???); //is this the same as reset,
   // or are there some elements the same, some different.
 }
 

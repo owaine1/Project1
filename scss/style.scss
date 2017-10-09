@@ -17,7 +17,9 @@ body {
   display: flex;
   flex-direction: row;
 }
-
+[id^=box]{
+  padding: 0.5em;
+}
 img {
   width: auto;
   height: auto;
@@ -32,16 +34,17 @@ img {
 }
 
 #messages {
-  border: .5px solid #000;
+  border: 0.5px solid #000;
   display: block;
   animation: blinker 1s cubic-bezier(0, 0.92, 0.26, 1.32) infinite;
   background-color: #ffc;
   border: 2em;
+  padding: 0em 1em;
+  margin: 1em;
+  width: fit-content;
 }
 
-input {
-
-}
+input {}
 @keyframes blinker {
   50% {
     opacity: 0;
