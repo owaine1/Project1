@@ -33,7 +33,7 @@ function switchPlayers() {
     $('#playerTurn').text(player1 + "'s turn")
   }
 function winningTime(player1Time, player2Time){
-  if (player1Time < player2Time && player1Time !==0){
+  if (player1Time < player2Time && player2Time !==0){
     console.log(player1 + " is the winner!");
   } else {
     console.log(player2 + " is the winner!");
