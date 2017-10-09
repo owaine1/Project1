@@ -3,12 +3,18 @@ body {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 900px; }
+  font-weight: 900px;
+  color: #555; }
 
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
-  font-weight: 400px; }
+  font-weight: 400px;
+  color: #555; }
+
+p {
+  font-family: arial, sans-serif;
+  font-size: 1em; }
 
 img {
   width: auto;
