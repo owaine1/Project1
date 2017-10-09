@@ -35,9 +35,8 @@ function switchPlayers() {
 function winningTime(player1Time, player2Time){
   if (player1Time < player2Time && player2Time !==0){
     console.log(player1 + " is the winner!");
-  } else {
+  } else if(player2Time < player1Time){
     console.log(player2 + " is the winner!");
-    player2
   }
   console.log('Inside winningTime');
 }
