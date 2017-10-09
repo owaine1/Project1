@@ -82,7 +82,7 @@ function imageDatabase() {
   imageArray[23] = 'images/purpleHex.svg';
   imageArray[24] = 'images/purpleTri.svg';
   imageArray[25] = 'images/redBox.svg';
-  imageArray[26] = 'images/redBoxCircle.svg';
+  imageArray[26] = 'images/redCircle.svg';
   imageArray[27] = 'images/redCross.svg';
   imageArray[28] = 'images/redHex.svg';
   imageArray[29] = 'images/redTri.svg';
