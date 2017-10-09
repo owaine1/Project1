@@ -54,6 +54,9 @@ function switchPlayers() {
 function gameOver() {
   console.log('Inside gameOver');
   switchPlayers();
+  // TODO find winning player and generate JSON
+  // winner is the player with the shortest time
+  var winner = {winner: 'bill'};
 }
 
 function recordTime() {
