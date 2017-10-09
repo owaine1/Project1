@@ -4,6 +4,8 @@ function getPlayers() {
   player2 = $('#player2').val();
   if (player1 == '' || player2 == '') {
     $('#messages').text('Enter both player names');
+    $('#startButton').show(); //FIXME see javascript.js L33.
+
   } else {
     $('#messages').text('');
     return true;
@@ -18,35 +20,38 @@ function switchPlayers() {
     console.log('player1' + player1 + ', ' + recordTime());
     currentPlayer = player2;
     $('#playerTurn').text(player2 + "'s turn")
-    winningTime (player1Time = recordTime)
+    winningTime(player1Time = recordTime());
     // send to a function scoreCounter
 
   } else if (player2 == currentPlayer) {
     console.log('player2' + player2 + ', ' + recordTime());
     currentPlayer = player1;
     $('#playerTurn').text(player1 + "'s turn")
-    winningTime (player2Time = recordTime)
+    winningTime(player2Time = recordTime());
     // send to a function scoreCounter
 
   } else {
     currentPlayer = player1; //initial player1
     $('#playerTurn').text(player1 + "'s turn")
   }
-function winningTime(player1Time, player2Time){
-  if (player1Time < player2Time && player2Time !==0){
-    console.log(player1 + " is the winner!");
-  } else if(player2Time < player1Time){
-    console.log(player2 + " is the winner!");
+
+  function winningTime(player1Time, player2Time) {
+    if (player1Time < player2Time && player2Time !== 0) {
+      $('#Row1').text(player1 + " Wins!!!");
+
+      console.log(player1 + " is the winner!");
+    } else if (player2Time < player1Time) {
+      console.log(player2 + " is the winner!");
+    }
+    console.log('Inside winningTime');
   }
-  console.log('Inside winningTime');
-}
   // TODO after players turn, go to next player half DONE
   // need to popup "next player"
   // on click, have reset / start new board
   // start new board? (a bit like reset / setup, but different,
   //  just call placeImages function???)
 
-  // Need to retain player's time — use recordTime function
+  // Need to retain player's time — use recordTime function FIXME is there. Doesn't work
   // go to next player
   // player2 plays and finishes turn
   // compare player1 time and player2 time
@@ -63,7 +68,9 @@ function gameOver() {
   switchPlayers();
   // TODO find winning player and generate JSON
   // winner is the player with the shortest time
-  var winner = {winner: 'bill'};
+  var winner = {
+    winner: 'bill'
+  };
 }
 
 function recordTime() {

@@ -5,7 +5,7 @@ var lastCard; // holds url of last image shown
 var lastId; // Id of cards to compare
 var cardCounter = 0; // stops timer when it hits 8 (matching pairs)
 var cardTimeDelay = 500; // time image is shown for
-var imageFadeTime = 1000; // time taken for 2 matching images to disappear
+var imageFadeTime = 800; // time taken for 2 matching images to disappear
 var player1, player2, currentPlayer;
 
 $(document).ready(setup);
@@ -23,13 +23,16 @@ function attachClickListeners() {
   $('img[id^="card"]').click(cardFlip);
   $('#reset').click(reset); //DONE
   $('#startButton').click(gameStart);
+
   // $('#newGame').click(???); //is this the same as reset,
   // or are there some elements the same, some different.
 }
 
 function gameStart() {
   console.log('Inside gameStart');
-  if(getPlayers(playerTurn)){
+  // $('#startButton').fadeOut(1000); //FIXME startButton hides if 1 or 2 empty player names
+  // i.e. can't start the game!
+  if (getPlayers(playerTurn)) {
     console.log(player1, player2);
     $('#container1').show();
     switchPlayers();
@@ -58,13 +61,13 @@ function cardFlip() {
     matchingCards(currentUrl);
   } else {
     $(imageClicked).hide();
-    $(imageClicked).siblings('.imageHide').show(); //sib = same level img
+    $(imageClicked).siblings('.imageHide').show() //sib = same level img
     lastCard = currentUrl;
     lastId = currentId;
     setTimeout(function() {
       $(imageClicked).show();
       $(imageClicked).siblings('.imageHide').hide();
-    }, cardTimeDelay);
+    }, cardTimeDelay, 250);
     console.log('not the same');
   }
 }
@@ -76,12 +79,12 @@ function matchingCards(lastUrl) {
   $('img[src="' + lastUrl + '"]').show(); // shows the two matching cards
   // $('img[src="' + lastUrl + '"]').fadeOut(imageFadeTime);
   $('img[src="' + lastUrl + '"]').attr("src", "images/check.svg");
-  if (cardCounter == 1) {//TODO reset to 8 before deploy
+
+  if (cardCounter == 1) { //TODO reset to 8 before deploy
     gameOver();
   }
   displayTimer();
 }
-// switch player function???
 // IDEA once 2nd player played, need to calculate shortest time between the 2
 // shortest time wins, gets token
 // player 1 time vs player 2 time
