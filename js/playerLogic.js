@@ -77,7 +77,7 @@ function recordTime() {
   console.log('Inside recordTime');
   var timeEnd = new Date();
   var timeTaken = (timeEnd - timeStart) / 1000;
-  $('#timeTaken').text('game over, time taken: ' + timeTaken);
+  $('#timeTaken').text('Time taken: ' + timeTaken);
   return timeTaken;
 }
 
