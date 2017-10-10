@@ -4,7 +4,7 @@ function getPlayers() {
   player2 = $('#player2').val();
   if (player1 == '' || player2 == '') {
     $('#messages').text('Enter both player names');
-    $('#startButton').show(); //FIXME see javascript.js L33.
+    $('#startButton').show(); //FIXME see javascript.js L32
 
   } else {
     $('#messages').text('');
@@ -21,14 +21,14 @@ function switchPlayers() {
     currentPlayer = player2;
     $('#playerTurn').text(player2 + "'s turn")
     winningTime(player1Time = recordTime());
-    // send to a function scoreCounter, now winningTime
+    // send to a function winningTime. Later development scoreCounter
 
   } else if (player2 == currentPlayer) {
     console.log('player2' + player2 + ', ' + recordTime());
     currentPlayer = player1;
     $('#playerTurn').text(player1 + "'s turn")
     winningTime(player2Time = recordTime());
-    // send to a function scoreCounter, now winningTime
+    // send to a function winningTime. Later development scoreCounter
 
   } else {
     currentPlayer = player1; //initial player1
@@ -85,7 +85,6 @@ function displayTimer() {
   console.log(); //TODO not recordTime function, use timeStart to display somewhere?
 }
 
-
 function totalPlayerTimeTaken() {
   console.log('Inside totalPlayerTimeTaken');
 }
@@ -97,11 +96,6 @@ function scoreCounter() {
 // CANVAS ELEMENT of counter flashing and twisting and being added to player score.
 // Related to rightCardsPicked function.
 // Still need counter in main javaScript, not displayed but in memory
-
-function concedeGameButton() {
-  console.log('Inside concedeGameButton');
-  // makes no score, goes to next player
-}
 
 // IDEA
 // function firstToThreeCounter() {

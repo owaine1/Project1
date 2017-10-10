@@ -5,5 +5,6 @@ function reset(){
   placeImages();
   $('#timeTaken').html('');
 }
-// TODO think reset would reset scores. New Game button is simmilar
-// but not reset scores
+// resets time and board
+// TODO think reset would reset scores. New Game button is similar
+// but doesn't reset scores
