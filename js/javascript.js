@@ -9,6 +9,7 @@ var imageFadeTime = 800; // time taken for 2 matching images to disappear
 var player1, player2, currentPlayer;
 
 $(document).ready(setup);
+
 function setup() {
   console.log('Setup loaded');
   $('#container1').hide(); // this is a quick fix: stops play if no player names entered
@@ -46,11 +47,6 @@ function cardFlip() {
   console.log('Inside cardFlip');
   var imageClicked = this;
 
-  // $(this)
-  //   .fadeOut(250, function() {
-  //     $(this).siblings('.imageHide').show();
-  //   })
-  //   .fadeIn(250);
   var currentUrl = $(imageClicked).siblings('.imageHide').attr('src');
   var currentId = $(imageClicked).attr('id');
   console.log('currentId: ' + currentId);
@@ -76,9 +72,9 @@ function matchingCards(lastUrl) {
   $('img[src="' + lastUrl + '"]').siblings().hide(); // hides the backOfCard.svg
   $('img[src="' + lastUrl + '"]').show(); // shows the two matching cards
   $('img[src="' + lastUrl + '"]').fadeOut(
-    function(){
+    function() {
       $(this).attr("src", "images/check.svg")
-      .fadeIn(500);
+        .fadeIn(500);
     }
   );
 

@@ -38,10 +38,12 @@ function switchPlayers() {
   function winningTime(player1Time, player2Time) {
     if (player1Time < player2Time && player2Time != 0) {
       $('#Row1').text(player1 + " Wins!!!");
+      return player1;
 
       console.log(player1 + " is the winner!");
     } else if (player2Time < player1Time) {
-      console.log(player2 + " is the winner!");
+      $('#Row1').text(player2 + " Wins!!!");
+      return player2;
     }
     console.log('Inside winningTime');
   }
@@ -63,7 +65,7 @@ function switchPlayers() {
   //
 }
 
-function gameOver() {
+function gameOver(winningTime) {
   console.log('Inside gameOver');
   switchPlayers();
   // TODO find winning player and generate JSON
