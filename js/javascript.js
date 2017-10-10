@@ -9,7 +9,6 @@ var imageFadeTime = 800; // time taken for 2 matching images to disappear
 var player1, player2, currentPlayer;
 
 $(document).ready(setup);
-
 function setup() {
   console.log('Setup loaded');
   $('#container1').hide(); // this is a quick fix: stops play if no player names entered
