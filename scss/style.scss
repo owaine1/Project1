@@ -18,6 +18,7 @@ h2 {
   font-family: $main-font;
   font-size: $font-sizepandh2;
   font-weight: 400px;
+  letter-spacing: 0.1em;
   color: $main-fontColor;
 }
 
@@ -26,7 +27,9 @@ p {
   font-family: arial, sans-serif;
   font-size: $font-sizepandh2;
 }
-.canvasnote {text-indent: 40px;}
+.canvasNote {
+  text-indent: 40px;
+}
 img {
   width: auto;
   height: auto;

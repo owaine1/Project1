@@ -12,6 +12,7 @@ h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
   font-weight: 400px;
+  letter-spacing: 0.1em;
   color: #555; }
 
 .messagesText,
@@ -19,7 +20,7 @@ p {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
-.canvasnote {
+.canvasNote {
   text-indent: 40px; }
 
 img {

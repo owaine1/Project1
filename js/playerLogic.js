@@ -5,7 +5,6 @@ function getPlayers() {
   if (player1 == '' || player2 == '') {
     $('#messages').text('Enter both player names');
     $('#startButton').show(); //FIXME see javascript.js L32
-
   } else {
     $('#messages').text('');
     return true;
