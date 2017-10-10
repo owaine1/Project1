@@ -1,7 +1,7 @@
 $main-font: 'Montserrat', sans-serif;
 $main-fontColor: #555;
-$font-sizepandh2: 1em;
-// * {border: solid red 2px;}
+$font-sizepandh2: 1em; // * {border: solid red 2px;}
+
 body {
   background: #ccc;
 }
@@ -10,21 +10,23 @@ h1 {
   margin: auto;
   font-family: $main-font;
   font-weight: 900px;
-  color: $main-fontColor
-
+  color: $main-fontColor;
 }
 
-h2{
+h2 {
+  text-indent: 40px;
   font-family: $main-font;
   font-size: $font-sizepandh2;
-font-weight: 400px;
-color: $main-fontColor
-
+  font-weight: 400px;
+  color: $main-fontColor;
 }
-p, .messagesText {
+
+.messagesText,
+p {
   font-family: arial, sans-serif;
   font-size: $font-sizepandh2;
 }
+
 img {
   width: auto;
   height: auto;
@@ -49,46 +51,50 @@ img {
   display: flex;
   flex-direction: row;
 }
-[id^=box]{
+
+[id^=box] {
   padding: 0.5em;
 }
+
 .test {
   border: 2px solid #f00;
 }
-.buttonsAndPNames{
-  display: flex;
-  padding: 1em 1em;
-  justify-content: space-evenly;
-margin: 0 auto;
 
+.buttonsAndPNames {
+  display: flex;
+  padding: 1em;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
-input, button {
+
+button,
+input {
   border-radius: 25px;
-  padding: 1em 1em;
+  padding: 1em;
 }
 
 input {
   border: 5px solid #ddd;
 }
-button {
 
+button {
   border: 5px solid #ddd;
   background-color: #eee;
   font-weight: 800;
-  outline:none;
+  outline: none;
   width: 100px;
 }
+
 #messages {
   border-radius: 25px;
   display: block;
   animation: blinker 1s cubic-bezier(0, 0.92, 0.26, 1.32) infinite;
   background-color: #ffc;
   border: 2em;
-  padding: 0em 1em;
+  padding: 0 1em;
   margin: 1em;
   width: fit-content;
 }
-
 @keyframes blinker {
   50% {
     opacity: 0;

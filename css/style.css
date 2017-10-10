@@ -8,12 +8,14 @@ h1 {
   color: #555; }
 
 h2 {
+  text-indent: 40px;
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
   font-weight: 400px;
   color: #555; }
 
-p, .messagesText {
+.messagesText,
+p {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
@@ -45,13 +47,14 @@ img {
 
 .buttonsAndPNames {
   display: flex;
-  padding: 1em 1em;
+  padding: 1em;
   justify-content: space-evenly;
   margin: 0 auto; }
 
-input, button {
+button,
+input {
   border-radius: 25px;
-  padding: 1em 1em; }
+  padding: 1em; }
 
 input {
   border: 5px solid #ddd; }
@@ -69,7 +72,7 @@ button {
   animation: blinker 1s cubic-bezier(0, 0.92, 0.26, 1.32) infinite;
   background-color: #ffc;
   border: 2em;
-  padding: 0em 1em;
+  padding: 0 1em;
   margin: 1em;
   width: fit-content; }
 
