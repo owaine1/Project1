@@ -13,7 +13,7 @@ h2 {
   font-weight: 400px;
   color: #555; }
 
-p {
+p, .messagesText {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
