@@ -3,12 +3,12 @@ body {
 
 h1 {
   margin: auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900px;
   color: #555; }
 
 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1em;
   font-weight: 400px;
   color: #555; }
@@ -43,6 +43,26 @@ img {
 .test {
   border: 2px solid #f00; }
 
+#player1, #player2 {
+  border: 5px solid #ddd; }
+
+.buttonsAndPNames {
+  display: flex;
+  padding: 1em 1em;
+  justify-content: space-evenly;
+  margin: 0 auto; }
+
+input, button {
+  border-radius: 25px;
+  padding: 1em 1em; }
+
+button {
+  border: none;
+  background-color: #fc6;
+  font-weight: 800;
+  outline: none;
+  width: fit-content; }
+
 #messages {
   border: 0.5px solid #000;
   display: block;
@@ -56,10 +76,6 @@ img {
 @keyframes blinker {
   50% {
     opacity: 0; } }
-#container1,
-#container2 {
-  border: 0.2em solid #ccc; }
-
 /*responsive - phone*/
 @media screen and (max-width: 700px) {
   #outer_container {

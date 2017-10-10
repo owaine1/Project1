@@ -12,7 +12,7 @@ $(document).ready(setup);
 
 function setup() {
   console.log('Setup loaded');
-  $('#container1').hide();
+  $('#container1').hide(); // this is a quick fix: stops play if no player names entered
   placeImages(); // does all the image setup stuff in imageData.js
   attachClickListeners();
   timeStart = new Date();
@@ -77,8 +77,12 @@ function matchingCards(lastUrl) {
   cardCounter++;
   $('img[src="' + lastUrl + '"]').siblings().hide(); // hides the backOfCard.svg
   $('img[src="' + lastUrl + '"]').show(); // shows the two matching cards
-  // $('img[src="' + lastUrl + '"]').fadeOut(imageFadeTime);
-  $('img[src="' + lastUrl + '"]').attr("src", "images/check.svg");
+  $('img[src="' + lastUrl + '"]').fadeOut(
+    function(){
+      $(this).attr("src", "images/check.svg")
+      .fadeIn(500);
+    }
+  );
 
   if (cardCounter == 1) { //TODO reset to 8 before deploy
     gameOver();
@@ -88,4 +92,4 @@ function matchingCards(lastUrl) {
 // IDEA once 2nd player played, need to calculate shortest time between the 2
 // shortest time wins, gets token
 // player 1 time vs player 2 time
-// players' least time wins.
+// players with the least time wins.

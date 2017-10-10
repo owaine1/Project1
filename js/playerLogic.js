@@ -21,14 +21,14 @@ function switchPlayers() {
     currentPlayer = player2;
     $('#playerTurn').text(player2 + "'s turn")
     winningTime(player1Time = recordTime());
-    // send to a function scoreCounter
+    // send to a function scoreCounter, now winningTime
 
   } else if (player2 == currentPlayer) {
     console.log('player2' + player2 + ', ' + recordTime());
     currentPlayer = player1;
     $('#playerTurn').text(player1 + "'s turn")
     winningTime(player2Time = recordTime());
-    // send to a function scoreCounter
+    // send to a function scoreCounter, now winningTime
 
   } else {
     currentPlayer = player1; //initial player1
@@ -51,7 +51,7 @@ function switchPlayers() {
   // start new board? (a bit like reset / setup, but different,
   //  just call placeImages function???)
 
-  // Need to retain player's time — use recordTime function FIXME is there. Doesn't work
+  // Need to retain player's time — use recordTime FIXME function  is there. Doesn't work
   // go to next player
   // player2 plays and finishes turn
   // compare player1 time and player2 time
@@ -85,6 +85,7 @@ function displayTimer() {
   console.log(); //TODO not recordTime function, use timeStart to display somewhere?
 }
 
+
 function totalPlayerTimeTaken() {
   console.log('Inside totalPlayerTimeTaken');
 }
@@ -92,7 +93,7 @@ function totalPlayerTimeTaken() {
 function scoreCounter() {
   console.log('Inside scoreCounter');
 }
-
+// IDEA
 // CANVAS ELEMENT of counter flashing and twisting and being added to player score.
 // Related to rightCardsPicked function.
 // Still need counter in main javaScript, not displayed but in memory
@@ -102,11 +103,13 @@ function concedeGameButton() {
   // makes no score, goes to next player
 }
 
+// IDEA
 // function firstToThreeCounter() {
 //   console.log('Inside finalScoreCounter');
 //   // holds players' wins
 // }
 //
+// IDEA
 // function endOfGame() {
 //   console.log('Inside endOfGame');
 //   // counter of amount 1st player to score 3
