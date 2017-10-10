@@ -34,9 +34,9 @@ function switchPlayers() {
     currentPlayer = player1; //initial player1
     $('#playerTurn').text(player1 + "'s turn")
   }
-
+// FIXME below doesnt work!!!
   function winningTime(player1Time, player2Time) {
-    if (player1Time < player2Time && player2Time !== 0) {
+    if (player1Time < player2Time && player2Time != 0) {
       $('#Row1').text(player1 + " Wins!!!");
 
       console.log(player1 + " is the winner!");

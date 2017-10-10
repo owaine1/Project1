@@ -54,7 +54,6 @@ function cardFlip() {
   var currentUrl = $(imageClicked).siblings('.imageHide').attr('src');
   var currentId = $(imageClicked).attr('id');
   console.log('currentId: ' + currentId);
-
   if (currentUrl == lastCard && currentId != lastId) { //cU =(lC and cI)
     console.log('the same!');
     matchingCards(currentUrl);
