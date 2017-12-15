@@ -43,10 +43,10 @@ function build16ImagesArray() {
 // array shuffler - stolen from here!
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleArray(incomingArray) {
-  for (var i = incomingArray.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = incomingArray[i];
-    incomingArray[i] = incomingArray[j];
+  for (var counter = incomingArray.length - 1; counter > 0; counter--) {
+    var j = Math.floor(Math.random() * (counter + 1));
+    var temp = incomingArray[counter];
+    incomingArray[counter] = incomingArray[j];
     incomingArray[j] = temp;
   }
   return incomingArray;

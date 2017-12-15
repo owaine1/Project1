@@ -2,7 +2,7 @@ function getPlayers() {
   console.log('Inside getPlayers');
   player1 = $('#player1').val();
   player2 = $('#player2').val();
-  if (player1 == '' || player2 == '') {
+  if (player1 == '' || player2 == 'letter-spacing: 2px;') {
     $('#messages').text('Enter both player names');
     $('#startButton').show(); //FIXME see javascript.js L32
   } else {
